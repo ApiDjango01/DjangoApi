@@ -4,6 +4,8 @@ from django.db import models
 class Post(models.Model):
     post_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
+    imagem = models.ImageField(upload_to = 'carregar/', default="")
+
 
 class Comentario(models.Model):
     post_id = models.ForeignKey(Post, on_delete=models.CASCADE)
